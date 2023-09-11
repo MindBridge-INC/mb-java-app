@@ -49,8 +49,7 @@ public class LoginCadConsole {
                 |    Pay Attention!   |
                 +---------------------+
                 |    1 - Login        |
-                |    2 - Cadastro     |
-                |    3 - Sair         |
+                |    2 - Sair         |
                 +---------------------+
                 """);
 
@@ -80,7 +79,7 @@ public class LoginCadConsole {
                 if (existeUsuario && isAdmin) {
                     System.out.println("Login efetuado com sucesso!");
 
-                    while (opcaoAdmin != 3) {
+                    while (opcaoAdmin != 4) {
                         System.out.println("""
                             +------------------------------------------+
                                         INFORMAÇÕES DO USUÁRIO
@@ -88,11 +87,13 @@ public class LoginCadConsole {
                             Olá, %s!
                             +------------------------------------------+
                             1 - Exibir usuários
-                            2 - Remover usuário
-                            3 - Logout
+                            2 - Cadastrar usuários
+                            3 - Remover usuário
+                            4 - Logout
                             """.formatted(username));
 
                         opcaoAdmin = leitorSubmenu.nextInt();
+
 
                         if (opcaoAdmin == 1) {
                             System.out.println("Usuários cadastrados no sistema");
@@ -103,6 +104,21 @@ public class LoginCadConsole {
                                         """.formatted(usuarios.get(i),tipoAcessos.get(i)));
                             }
                         } else if (opcaoAdmin == 2) {
+                            System.out.println("Cadastre o nome de usuário:");
+                            username = leitorInput.nextLine();
+
+                            System.out.println("Cadastre uma senha:");
+                            password = leitorInput.nextLine();
+
+                            System.out.println("Tipo de usuário -> admin/user:");
+                            tipoUsuario = leitorInput.nextLine();
+
+                            usuarios.add(username);
+                            senhas.add(password);
+                            tipoAcessos.add(tipoUsuario);
+
+                            System.out.println("Usuário cadastrado com sucesso!");
+                        } else if (opcaoAdmin == 3) {
 
                             Boolean validarUsuario = false;
 
@@ -127,8 +143,10 @@ public class LoginCadConsole {
                                 System.out.println("Usuário não encontrado");
 
                             }
-                        } else if (opcaoAdmin == 3) {
+                        } else if (opcaoAdmin == 4) {
                             System.out.println("Saindo...");
+                        } else {
+                            System.out.println("Opção inválida, tente novamente.");
                         }
                     }
 
@@ -150,34 +168,12 @@ public class LoginCadConsole {
                 } else {
                     System.out.println("Username ou senha incorreto");
                 }
-            }
-
-            else if (opcao == 2) {
-                System.out.println("Cadastre o nome de usuário:");
-                username = leitorInput.nextLine();
-
-                System.out.println("Cadastre uma senha:");
-                password = leitorInput.nextLine();
-
-                System.out.println("Tipo de usuário -> admin/user:");
-                tipoUsuario = leitorInput.nextLine();
-
-                usuarios.add(username);
-                senhas.add(password);
-                tipoAcessos.add(tipoUsuario);
-
-                System.out.println("Usuário cadastrado com sucesso!");
-            }
-
-            else if (opcao == 3) {
+                
+            } else if (opcao == 2) {
                 System.out.println("Encerrando programa...");
-                opcao = 3;
-            }
-
-            else {
+            } else {
                 System.out.println("Opção inválida, tente novamente");
             }
-
-        } while (opcao != 3);
+        } while (opcao != 2);
     }
 }
