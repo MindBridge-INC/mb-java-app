@@ -25,6 +25,21 @@ public class LoginCadConsole {
         String password = "";
         String tipoUsuario = "";
 
+        usuarios.add("rubi");
+        usuarios.add("safira");
+        usuarios.add("esmeralda");
+        usuarios.add("patricia");
+
+        tipoAcessos.add("user");
+        tipoAcessos.add("user");
+        tipoAcessos.add("user");
+        tipoAcessos.add("admin");
+
+        senhas.add("1234");
+        senhas.add("1234");
+        senhas.add("1234");
+        senhas.add("admin");
+
         do {
 
             System.out.println("""
@@ -65,20 +80,29 @@ public class LoginCadConsole {
                 if (existeUsuario && isAdmin) {
                     System.out.println("Login efetuado com sucesso!");
 
-                    while (opcaoAdmin != 2) {
+                    while (opcaoAdmin != 3) {
                         System.out.println("""
                             +------------------------------------------+
                                         INFORMAÇÕES DO USUÁRIO
                             +------------------------------------------+
                             Olá, %s!
                             +------------------------------------------+
-                            1 - Remover usuário
-                            2 - Logout
+                            1 - Exibir usuários
+                            2 - Remover usuário
+                            3 - Logout
                             """.formatted(username));
 
                         opcaoAdmin = leitorSubmenu.nextInt();
 
                         if (opcaoAdmin == 1) {
+                            System.out.println("Usuários cadastrados no sistema");
+                            System.out.println("-------------------------------");
+                            for (int i = 0; i < usuarios.size(); i++) {
+                                System.out.println("""
+                                        %s | Tipo: %s
+                                        """.formatted(usuarios.get(i),tipoAcessos.get(i)));
+                            }
+                        } else if (opcaoAdmin == 2) {
 
                             Boolean validarUsuario = false;
 
@@ -103,8 +127,8 @@ public class LoginCadConsole {
                                 System.out.println("Usuário não encontrado");
 
                             }
-                        } else if (opcaoAdmin == 2) {
-                            System.out.println("Encerrando programa...");
+                        } else if (opcaoAdmin == 3) {
+                            System.out.println("Saindo...");
                         }
                     }
 
@@ -146,7 +170,7 @@ public class LoginCadConsole {
             }
 
             else if (opcao == 3) {
-                System.out.println("Logout...");
+                System.out.println("Encerrando programa...");
                 opcao = 3;
             }
 
