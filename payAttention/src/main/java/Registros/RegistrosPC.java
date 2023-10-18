@@ -58,4 +58,5 @@ public class RegistrosPC {
     public void setDownloadRede(Long downloadRede) {
         this.downloadRede = downloadRede;
     }
+
 }
