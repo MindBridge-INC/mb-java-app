@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RegistrosDAO {
-    public static boolean cadastrarComputador(RegistrosPC registros) {
+    public static boolean inserirRegistros(RegistrosPC registros) {
         String sql = "INSERT INTO registroMaquina (usoRam, usoProcessador, usoDisco, downloadRede, dispositivosUSB) VALUES (?,?,?,?,?)";
         PreparedStatement ps = null;
         try {

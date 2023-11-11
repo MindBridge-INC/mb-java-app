@@ -4,6 +4,8 @@
  */
 package loginModel;
 
+import Maquina.CadastroMaquina;
+import Maquina.CapturaMaquina;
 import Registros.Captura;
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -24,10 +26,11 @@ public class LoginDAO extends javax.swing.JFrame{
         System.out.println("sql");
         PreparedStatement statment = conexao.prepareStatement(sql);
         ResultSet rs = statment.executeQuery();
-        
         if (rs.next()) {
             System.out.println("Possui");
             JOptionPane.showMessageDialog(rootPane, "Entrando !!!");
+            CapturaMaquina capturaMaquina = new CapturaMaquina();
+            capturaMaquina.capturaMaquina();
             Captura captura = new Captura();
             captura.capturaDados();
         }else{

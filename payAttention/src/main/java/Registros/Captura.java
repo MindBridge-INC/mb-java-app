@@ -52,7 +52,7 @@ public class Captura extends javax.swing.JFrame{
                         registros.setDiscoUso(usoDisco);
                         registros.setDownloadRede(redeDownload);
                         registros.setDispositivosUSB(usbConectados);
-                        RegistrosDAO.cadastrarComputador(registros);
+                        RegistrosDAO.inserirRegistros(registros);
                         System.out.println("\n*----------------------------------------------------------*");
                         System.out.println("Uso processador: " + processador.getUso());
                         System.out.println("Memória RAM em uso: " + Conversor.formatarBytes(memoriaUso));

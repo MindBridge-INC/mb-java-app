@@ -1,18 +1,18 @@
 package Maquina;
 
 public class CadastroMaquina {
-    private String nomeMaquina;
+    private String nomeComputador;
     private String sistemaOperacional;
     private String nomeProcessador;
-    private Integer quantidadeRAM;
-    private Integer armazenamentoHD;
+    private Long quantidadeRAM;
+    private Long armazenamentoHD;
 
-    public String getNomeMaquina() {
-        return nomeMaquina;
+    public String getNomeComputador() {
+        return nomeComputador;
     }
 
-    public void setNomeMaquina(String nomeMaquina) {
-        this.nomeMaquina = nomeMaquina;
+    public void setNomeComputador(String nomeComputador) {
+        this.nomeComputador = nomeComputador;
     }
 
     public String getSistemaOperacional() {
@@ -31,19 +31,17 @@ public class CadastroMaquina {
         this.nomeProcessador = nomeProcessador;
     }
 
-    public Integer getQuantidadeRAM() {
+    public Long getQuantidadeRAM() {
         return quantidadeRAM;
     }
 
-    public void setQuantidadeRAM(Integer quantidadeRAM) {
+    public void setQuantidadeRAM(Long quantidadeRAM) {
         this.quantidadeRAM = quantidadeRAM;
     }
 
-    public Integer getArmazenamentoHD() {
+    public Long getArmazenamentoHD() {
         return armazenamentoHD;
     }
 
-    public void setArmazenamentoHD(Integer armazenamentoHD) {
-        this.armazenamentoHD = armazenamentoHD;
-    }
+    public void setArmazenamentoHD(Long armazenamentoHD) {this.armazenamentoHD = armazenamentoHD;}
 }
