@@ -28,40 +28,32 @@ public class Captura extends javax.swing.JFrame{
     public void capturaDados() {
         JOptionPane.showMessageDialog(rootPane, "Iniciando a captura de dados em segundo plano...");
          RegistrosPC registros = new RegistrosPC();
-        /*Pegar temperatura do processadore com JSensors*/
-        Components components = JSensors.get.components();
-        Cpu cpu = components.cpus.get(0);
-        List<Temperature> temperatures = cpu.sensors.temperatures;
-        System.out.println(temperatures.get(temperatures.size()-1).value);
         /*--------------------------------------------------------------*/
 
-        /*Inicio Looca para captura de dados*/
+        /*Inicio Looca para captura de dados registro de maquinas*/
         Looca looca = new Looca();
         Memoria memoria = looca.getMemoria();
         DiscoGrupo disco = looca.getGrupoDeDiscos();
         Processador processador = looca.getProcessador();
-        Long memoriaUso = memoria.getEmUso();
-        Long usoDisco = disco.getTamanhoTotal();
-        Long redeDownload = looca.getRede().getGrupoDeInterfaces().getInterfaces().get(0).getBytesRecebidos()/5;
-        int usbConectados = looca.getDispositivosUsbGrupo().getDispositivosUsbConectados().size();
-
-        registros.setTemperaturaProcessador(temperatures.get(temperatures.size()-1).value);
-        registros.setMemoriaUso(memoriaUso);
-        registros.setUsoProcessador(processador.getUso());
-        registros.setDiscoUso(usoDisco);
-        registros.setDownloadRede(redeDownload);
-        registros.setDispositivosUSB(usbConectados);
-
-
         if (timer == null) {
             timer = new Timer();
             TimerTask tarefa = new TimerTask() {
                 @Override
                 public void run() {
                     try {
+
+                        Long memoriaUso = memoria.getEmUso();
+                        Long usoDisco = disco.getTamanhoTotal();
+                        Long redeDownload = looca.getRede().getGrupoDeInterfaces().getInterfaces().get(0).getBytesRecebidos()/5;
+                        int usbConectados = looca.getDispositivosUsbGrupo().getDispositivosUsbConectados().size();
+
+                        registros.setMemoriaUso(memoriaUso);
+                        registros.setUsoProcessador(processador.getUso());
+                        registros.setDiscoUso(usoDisco);
+                        registros.setDownloadRede(redeDownload);
+                        registros.setDispositivosUSB(usbConectados);
                         RegistrosDAO.cadastrarComputador(registros);
                         System.out.println("\n*----------------------------------------------------------*");
-                        System.out.println("Temperatura processador: " + temperatures.get(temperatures.size() - 1).value);
                         System.out.println("Uso processador: " + processador.getUso());
                         System.out.println("Memória RAM em uso: " + Conversor.formatarBytes(memoriaUso));
                         System.out.println("Quantidade de discos: " + Conversor.formatarBytes(usoDisco));

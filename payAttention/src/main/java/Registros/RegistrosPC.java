@@ -1,38 +1,15 @@
 package Registros;
-
 public class RegistrosPC {
-    private int id;
-    private String sistemaOperacional;
     private Double usoProcessador;
-    private Double temperaturaProcessador;
     private Long memoriaUso;
     private Long discoUso;
     private int dispositivosUSB;
     private Long downloadRede;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getSistemaOperacional() {
-        return sistemaOperacional;
-    }
-    public void setSistemaOperacional(String sistemaOperacional) {
-        this.sistemaOperacional = sistemaOperacional;
-    }
     public Double getUsoProcessador() {
         return usoProcessador;
     }
     public void setUsoProcessador (Double usoProcessador){
         this.usoProcessador = usoProcessador;
-    }
-    public Double getTemperaturaProcessador() {
-        return temperaturaProcessador;
-    }
-    public void setTemperaturaProcessador(Double temperaturaProcessador){
-        this.temperaturaProcessador = temperaturaProcessador;
     }
     public Long getMemoriaUso() {
         return memoriaUso;
@@ -58,5 +35,4 @@ public class RegistrosPC {
     public void setDownloadRede(Long downloadRede) {
         this.downloadRede = downloadRede;
     }
-
 }

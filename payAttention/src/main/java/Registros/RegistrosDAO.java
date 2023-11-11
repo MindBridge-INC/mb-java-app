@@ -8,16 +8,15 @@ import java.sql.SQLException;
 
 public class RegistrosDAO {
     public static boolean cadastrarComputador(RegistrosPC registros) {
-        String sql = "INSERT INTO registroMaquina (TemperaturaProcessador, usoRam, usoProcessador, usoDisco, downloadRede, dispositivosUSB) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO registroMaquina (usoRam, usoProcessador, usoDisco, downloadRede, dispositivosUSB) VALUES (?,?,?,?,?)";
         PreparedStatement ps = null;
         try {
             ps = Conexao.getConexao().prepareStatement(sql);
-            ps.setDouble(1, registros.getTemperaturaProcessador());
-            ps.setString(2, Conversor.formatarBytes(registros.getMemoriaUso()));
-            ps.setDouble(3, registros.getUsoProcessador());
-            ps.setString(4, Conversor.formatarBytes(registros.getDiscoUso()));
-            ps.setString(5, Conversor.formatarBytes(registros.getDownloadRede()));
-            ps.setInt(6, registros.getDispositivosUSB());
+            ps.setString(1, Conversor.formatarBytes(registros.getMemoriaUso()));
+            ps.setDouble(2, registros.getUsoProcessador());
+            ps.setString(3, Conversor.formatarBytes(registros.getDiscoUso()));
+            ps.setString(4, Conversor.formatarBytes(registros.getDownloadRede()));
+            ps.setInt(5, registros.getDispositivosUSB());
             ps.execute();
         } catch (
                 SQLException ex) {
