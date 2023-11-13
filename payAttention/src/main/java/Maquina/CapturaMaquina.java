@@ -3,7 +3,6 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
 import javax.swing.*;
 import java.sql.SQLException;
-
 public class CapturaMaquina extends javax.swing.JFrame{
     public void capturaMaquina() throws SQLException {
         JOptionPane.showMessageDialog(rootPane, "Inserindo informações da máquina!");

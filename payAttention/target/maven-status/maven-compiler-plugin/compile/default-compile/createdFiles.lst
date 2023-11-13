@@ -8,6 +8,9 @@ Main\App.class
 Registros\RegistrosPC.class
 loginModel\LoginController.class
 Registros\Captura.class
+Maquina\CadastroMaquina.class
 Conexao\Conexao.class
+Maquina\MaquinaDAO.class
+Maquina\CapturaMaquina.class
 loginModel\Login.class
 Registros\RegistrosDAO.class
