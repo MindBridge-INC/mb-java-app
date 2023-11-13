@@ -1,9 +1,6 @@
 package Maquina;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
-import com.github.britooo.looca.api.group.rede.RedeParametros;
-import oshi.SystemInfo;
-
 import javax.swing.*;
 import java.sql.SQLException;
 

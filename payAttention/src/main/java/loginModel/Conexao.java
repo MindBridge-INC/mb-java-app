@@ -17,8 +17,8 @@ public class Conexao {
     public Conexao() {
     }
     private static final String url = "jdbc:mysql://localhost:3306/Mindbridge";
-    private static final String user = "admin";
-    private static final String password = "admin";
+    private static final String user = "root";
+    private static final String password = "1999";
 
     private static Connection conn;
 

@@ -3,18 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package loginModel;
-
-import Maquina.CadastroMaquina;
 import Maquina.CapturaMaquina;
 import Registros.Captura;
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import loginView.LoginView;
-
 /**
  *
  * @author Matheus

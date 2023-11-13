@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Registros;
+import Maquina.CadastroMaquina;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.DiscoGrupo;
 import com.github.britooo.looca.api.group.memoria.Memoria;
@@ -28,6 +29,7 @@ public class Captura extends javax.swing.JFrame{
     public void capturaDados() {
         JOptionPane.showMessageDialog(rootPane, "Iniciando a captura de dados em segundo plano...");
          RegistrosPC registros = new RegistrosPC();
+        CadastroMaquina cadastroMaquina = new CadastroMaquina();
         /*--------------------------------------------------------------*/
 
         /*Inicio Looca para captura de dados registro de maquinas*/
@@ -52,7 +54,7 @@ public class Captura extends javax.swing.JFrame{
                         registros.setDiscoUso(usoDisco);
                         registros.setDownloadRede(redeDownload);
                         registros.setDispositivosUSB(usbConectados);
-                        RegistrosDAO.inserirRegistros(registros);
+                        RegistrosDAO.inserirRegistros(registros, cadastroMaquina);
                         System.out.println("\n*----------------------------------------------------------*");
                         System.out.println("Uso processador: " + processador.getUso());
                         System.out.println("Memória RAM em uso: " + Conversor.formatarBytes(memoriaUso));
