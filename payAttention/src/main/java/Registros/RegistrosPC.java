@@ -5,6 +5,7 @@ public class RegistrosPC {
     private Long discoUso;
     private int dispositivosUSB;
     private Long downloadRede;
+    private Integer fkMaquinas;
     public Double getUsoProcessador() {
         return usoProcessador;
     }
@@ -35,4 +36,6 @@ public class RegistrosPC {
     public void setDownloadRede(Long downloadRede) {
         this.downloadRede = downloadRede;
     }
+    public Integer getFkMaquinas() {return fkMaquinas;}
+    public void setFkMaquinas(Integer fkMaquinas) {this.fkMaquinas = fkMaquinas;}
 }

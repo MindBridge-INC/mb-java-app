@@ -34,4 +34,16 @@ public class CadastroMaquina {
         return armazenamentoHD;
     }
     public void setArmazenamentoHD(Long armazenamentoHD) {this.armazenamentoHD = armazenamentoHD;}
+
+    @Override
+    public String toString() {
+        return "CadastroMaquina{" +
+                "idMaquina=" + idMaquina +
+                ", nomeComputador='" + nomeComputador + '\'' +
+                ", sistemaOperacional='" + sistemaOperacional + '\'' +
+                ", nomeProcessador='" + nomeProcessador + '\'' +
+                ", quantidadeRAM=" + quantidadeRAM +
+                ", armazenamentoHD=" + armazenamentoHD +
+                '}';
+    }
 }
