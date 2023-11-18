@@ -1,0 +1,5 @@
+nov. 18, 2023 7:12:36 PM Log.Log exibirLog
+INFO:      Operação: Backup
+     Entrada: data.txt
+     Resultado: Sucesso
+
