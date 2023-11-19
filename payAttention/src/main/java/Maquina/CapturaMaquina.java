@@ -3,6 +3,7 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
 import javax.swing.*;
 import java.sql.SQLException;
+
 public class CapturaMaquina extends javax.swing.JFrame{
     public void capturaMaquina() throws SQLException {
         JOptionPane.showMessageDialog(rootPane, "Inserindo informações da máquina!");
@@ -16,6 +17,7 @@ public class CapturaMaquina extends javax.swing.JFrame{
         String processador = looca.getProcessador().getNome();
         Long qtdRam = looca.getMemoria().getTotal();
         Long qtdDisco = looca.getGrupoDeDiscos().getTamanhoTotal();
+
 
         cadastroMaquina.setNomeComputador(nomeComputador);
         cadastroMaquina.setSistemaOperacional(sistema);

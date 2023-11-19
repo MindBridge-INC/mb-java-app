@@ -8,7 +8,7 @@ import Log.Log;
 public class Conexao {
     private static final String url = "jdbc:mysql://localhost:3306/Mindbridge";
     private static final String user = "root";
-    private static final String password = "230925ju";
+    private static final String password = "1999";
     private static Connection conn;
 
     public static Connection getConexao(){

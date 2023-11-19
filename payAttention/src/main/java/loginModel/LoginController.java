@@ -4,19 +4,19 @@
  */
 package loginModel;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import loginView.LoginView;
+import popUpModel.popUpDAO;
 
 /**
  *
  * @author Matheus
  */
 public class LoginController {
-    
     public void loginUsuario(LoginView view) throws SQLException, IOException{
-        Connection conexao = new Conexao().getConnection();
         LoginDAO login = new LoginDAO();
+        Login login1 = new Login();
+        login1.setEmail(view.getjTextFieldLogin().getText());
         login.Login(view.getjTextFieldLogin().getText(), view.getjPasswordFieldSenha().getText());
     }
 }

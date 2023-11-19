@@ -7,6 +7,8 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.DiscoGrupo;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
+import loginModel.Login;
+
 import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
