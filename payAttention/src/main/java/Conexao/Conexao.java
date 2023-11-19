@@ -3,12 +3,12 @@ package Conexao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import Log.Log;
 
 public class Conexao {
     private static final String url = "jdbc:mysql://localhost:3306/Mindbridge";
     private static final String user = "root";
-    private static final String password = "1999";
-
+    private static final String password = "230925ju";
     private static Connection conn;
 
     public static Connection getConexao(){
@@ -20,6 +20,21 @@ public class Conexao {
                 return conn;
             }
         } catch (SQLException e) {
+            // Capturando informações relevantes para o log
+            String mensagemErro = e.getMessage();
+            String estadoSQL = e.getSQLState();
+            Integer codigoErro = e.getErrorCode();
+
+            // Agora você pode incluir essas informações no log
+            Log log = new Log();
+            log.exibirLog("""
+             Conexão com Banco de Dados
+             URL: %s
+             Erro: %s
+             Estado SQL: %s
+             Código de Erro: %d
+                """.formatted(url, mensagemErro, estadoSQL, codigoErro));
+
             throw new RuntimeException(e);
         }
     }

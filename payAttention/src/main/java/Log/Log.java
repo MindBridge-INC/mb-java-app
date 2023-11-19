@@ -1,11 +1,13 @@
 package Log;
+
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Log {
-    public void exibirLog(String nomeOperacao, String parametrosEntradas, String resultado) {
+
+    public void exibirLog(String s) {
 
         // criando um objeto Logger com o nome "MyLog".
         Logger logger = Logger.getLogger("MyLog");
@@ -18,13 +20,6 @@ public class Log {
             // formatando a mensagem
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
-
-            // Registra as informações
-            logger.info("""
-             Operação: %s
-             Entrada: %s
-             Resultado: %s
-        """.formatted(nomeOperacao,parametrosEntradas,resultado));
 
 
         } catch (SecurityException e) {
