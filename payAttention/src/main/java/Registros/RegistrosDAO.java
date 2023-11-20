@@ -26,6 +26,7 @@ public class RegistrosDAO {
             ResultSet rs1 = stmt2.executeQuery(selectIdMaquina);
             while(rs1.next()) {
                 Integer idMaquinas = rs1.getInt(1);
+                registros.setFkMaquinas(idMaquinas);
                 ps = Conexao.getConexao().prepareStatement(sql);
                 ps.setDouble(1, registros.getMemoriaUso() / (Math.pow(1024, 3)));
                 ps.setDouble(2, registros.getUsoProcessador());

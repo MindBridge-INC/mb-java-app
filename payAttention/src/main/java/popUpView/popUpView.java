@@ -18,8 +18,10 @@ import java.util.TimerTask;
  * @author Matheus
  */
 public class popUpView extends javax.swing.JFrame {
-    public static final long TEMPO = (10000);
-    static Timer timer = null;
+    public static final long TEMPO_OPEN = (30000);
+    public static final long TEMPO_CLOSE = (60000);
+    static Timer timerOpen = null;
+    static Timer timerClose = null;
     /**
      * Creates new form popUpView
      */
@@ -68,7 +70,7 @@ public class popUpView extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -94,7 +96,7 @@ public class popUpView extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                   cadastrarPontos.popUp();
+                   cadastrarPontos.popUpTrue();
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -102,8 +104,8 @@ public class popUpView extends javax.swing.JFrame {
             }
         });
 
-        if (timer == null) {
-            timer = new Timer();
+        if (timerOpen == null) {
+            timerOpen = new Timer();
             TimerTask tarefa = new TimerTask() {
                 @Override
                 public void run() {
@@ -116,13 +118,36 @@ public class popUpView extends javax.swing.JFrame {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+
                 }
             };
-            timer.scheduleAtFixedRate(tarefa, TEMPO, TEMPO);
+            timerOpen.scheduleAtFixedRate(tarefa, TEMPO_OPEN, TEMPO_OPEN);
         }
+        if (timerClose == null) {
+                timerClose = new Timer();
+                TimerTask tarefa2 = new TimerTask() {
+                    @Override
+                    public void run() {
+                        try {
+                            java.awt.EventQueue.invokeLater(new Runnable() {
+                                public void run() {
+                                    view.setVisible(false);
+                                    try {
+                                        cadastrarPontos.popUpFalse();
+                                    } catch (SQLException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                timerClose.scheduleAtFixedRate(tarefa2, TEMPO_CLOSE, TEMPO_CLOSE);
+            }
         /* Create and display the form */
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

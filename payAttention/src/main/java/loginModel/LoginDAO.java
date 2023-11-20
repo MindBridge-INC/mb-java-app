@@ -4,8 +4,10 @@
  */
 package loginModel;
 import Janelas.CapturaJanelas;
+import Maquina.CapturaAcesso;
 import Maquina.CapturaMaquina;
 import Registros.Captura;
+import loginView.LoginView;
 import popUpView.popUpView;
 
 import java.sql.PreparedStatement;
@@ -19,19 +21,17 @@ import javax.swing.JOptionPane;
  */
 public class LoginDAO extends javax.swing.JFrame{
     public boolean Login(String email, String senha) throws SQLException{
-        Login login = new Login();
         Connection conexao = new Conexao().getConnection();
         String sql = "SELECT email, senha FROM UsuarioAluno WHERE email = '"+email+"' AND senha = '"+senha+"'";
         System.out.println("sql");
         PreparedStatement statment = conexao.prepareStatement(sql);
         ResultSet rs = statment.executeQuery();
         if (rs.next()) {
-            String userEmail = rs.getString(1);
-            login.setEmail(userEmail);
-            System.out.println("Seu email é: " + login.getEmail());
             JOptionPane.showMessageDialog(rootPane, "Entrando !!!");
             CapturaMaquina capturaMaquina = new CapturaMaquina();
             capturaMaquina.capturaMaquina();
+            CapturaAcesso capturaAcesso = new CapturaAcesso();
+            capturaAcesso.capturaAcesso();
             Captura captura = new Captura();
             captura.capturaDados();
             CapturaJanelas capturaJanelas = new CapturaJanelas();

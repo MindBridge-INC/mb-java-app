@@ -1,5 +1,7 @@
 package Maquina;
 import Conexao.Conexao;
+import Registros.RegistrosPC;
+
 import java.sql.*;
 public class MaquinaDAO {
     public static boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
@@ -36,6 +38,6 @@ public class MaquinaDAO {
                 SQLException ex) {
             System.out.println("Ocorreu um erro ao acessar o banco: " + ex.getMessage());
         }
-        return false;
+        return true;
     }
 }
