@@ -31,7 +31,9 @@ public class CapturaJanelas {
                         janelas.setTitulo(tituloJanela);
                         janelas.setComando(comandoJanela);
                         janelas.setLocalizacao(localizacaoJanela);
-                        JanelasDAO.cadastrarJanelas(janelas);
+                        if(tituloJanela != ""){
+                            JanelasDAO.cadastrarJanelas(janelas);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

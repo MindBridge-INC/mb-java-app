@@ -11,7 +11,7 @@ public class MaquinaDAO {
         String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         String selectNome = String.format("select hostname from Maquinas WHERE hostname = '%s'", cadastroMaquina.getNomeComputador());
-        String selectInstituicao = String.format("select t.fkinstituicao from usuarioaluno ua join turma t on ua.fkturma = t.id join instituicaoensino ie on t.fkinstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());
+        String selectInstituicao = String.format("select t.fkInstituicao from UsuarioAluno ua join Turma t on ua.fkTurma = t.id join InstituicaoEnsino ie on t.fkInstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;
