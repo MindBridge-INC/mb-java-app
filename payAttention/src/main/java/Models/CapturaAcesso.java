@@ -20,6 +20,7 @@ public class CapturaAcesso {
         logAcesso.setArmUsado(Double.valueOf(armUsado));
         System.out.println(logAcesso.getArmUsado());
         System.out.println(logAcesso.getDtInicializacao());
-        LogAcessoDAO.logAcesso(logAcesso);
+        LogAcessoDAO logAcessoDAO = new LogAcessoDAO();
+        logAcessoDAO.logAcesso(logAcesso);
     }
 }

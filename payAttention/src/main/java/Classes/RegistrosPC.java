@@ -1,9 +1,9 @@
 package Classes;
 public class RegistrosPC {
-    private Double usoProcessador;
-    private Long memoriaUso;
-    private Long discoUso;
-    private Integer fkMaquinas;
+    public Double usoProcessador;
+    public Long memoriaUso;
+    public Long discoUso;
+    public static Integer fkMaquinas;
     public Double getUsoProcessador() {
         return usoProcessador;
     }

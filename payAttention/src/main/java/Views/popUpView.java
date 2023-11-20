@@ -18,7 +18,7 @@ import java.util.TimerTask;
  */
 public class popUpView extends javax.swing.JFrame {
     public static final long TEMPO_OPEN = (30000);
-    public static final long TEMPO_CLOSE = (60000);
+    public static final long TEMPO_CLOSE = (90000);
     static Timer timerOpen = null;
     static Timer timerClose = null;
     /**

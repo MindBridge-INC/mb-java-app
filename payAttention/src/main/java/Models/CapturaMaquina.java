@@ -26,7 +26,8 @@ public class CapturaMaquina extends javax.swing.JFrame{
         cadastroMaquina.setNomeProcessador(processador);
         cadastroMaquina.setQuantidadeRAM(qtdRam);
         cadastroMaquina.setArmazenamentoHD(qtdDisco);
-        MaquinaDAO.cadastrarMaquina(cadastroMaquina);
+        MaquinaDAO maquinaDAO = new MaquinaDAO();
+        maquinaDAO.cadastrarMaquina(cadastroMaquina);
     }
 }
 

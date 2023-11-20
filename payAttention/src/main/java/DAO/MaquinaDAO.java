@@ -1,14 +1,17 @@
 package DAO;
+import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
 import Classes.CadastroMaquina;
 
 import java.sql.*;
 public class MaquinaDAO {
-    public static boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
+    UsuarioLogin usuarioLogin;
+    public boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
+        usuarioLogin = new UsuarioLogin();
         String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         String selectNome = String.format("select hostname from Maquinas WHERE hostname = '%s'", cadastroMaquina.getNomeComputador());
-        String selectInstituicao = String.format("select id from InstituicaoEnsino WHERE nome = 'Siglan'");
+        String selectInstituicao = String.format("select t.fkinstituicao from usuarioaluno ua join turma t on ua.fkturma = t.id join instituicaoensino ie on t.fkinstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;

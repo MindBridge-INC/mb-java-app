@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
+import Classes.Login;
+import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
 import Models.CapturaJanelas;
 import Models.CapturaAcesso;
@@ -17,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Matheus
  */
 public class LoginDAO extends javax.swing.JFrame{
-    public boolean Login(String email, String senha) throws SQLException{
+    public boolean validaLogin(String email, String senha) throws SQLException{
         String sql = "SELECT email, senha FROM UsuarioAluno WHERE email = '"+email+"' AND senha = '"+senha+"'";
         System.out.println("sql");
         Connection conn = null;
@@ -26,6 +28,13 @@ public class LoginDAO extends javax.swing.JFrame{
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         if (rs.next()) {
+            UsuarioLogin usuarioLogin = new UsuarioLogin();
+            String emailLogin = rs.getString(1);
+            String senhaLogin = rs.getString(2);
+            usuarioLogin.setEmail(emailLogin);
+            usuarioLogin.setSenha(senhaLogin);
+            System.out.println(usuarioLogin.getEmail());
+            System.out.println(usuarioLogin.getSenha());
             JOptionPane.showMessageDialog(rootPane, "Entrando !!!");
             CapturaMaquina capturaMaquina = new CapturaMaquina();
             capturaMaquina.capturaMaquina();

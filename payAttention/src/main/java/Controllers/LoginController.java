@@ -16,9 +16,7 @@ import Classes.Login;
  */
 public class LoginController {
     public void loginUsuario(LoginView view) throws SQLException, IOException{
-        LoginDAO login = new LoginDAO();
-        Login login1 = new Login();
-        login1.setEmail(view.getjTextFieldLogin().getText());
-        login.Login(view.getjTextFieldLogin().getText(), view.getjPasswordFieldSenha().getText());
+        LoginDAO chamarLogin = new LoginDAO();
+        chamarLogin.validaLogin(view.getjTextFieldLogin().getText(), view.getjPasswordFieldSenha().getText());
     }
 }

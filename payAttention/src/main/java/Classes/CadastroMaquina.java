@@ -1,12 +1,12 @@
 package Classes;
 
 public class CadastroMaquina {
-    private Integer idMaquina;
-    private String nomeComputador;
-    private String sistemaOperacional;
-    private String nomeProcessador;
-    private Long quantidadeRAM;
-    private Long armazenamentoHD;
+    public static Integer idMaquina;
+    public String nomeComputador;
+    public String sistemaOperacional;
+    public String nomeProcessador;
+    public Long quantidadeRAM;
+    public Long armazenamentoHD;
 
     public Integer getIdMaquina() {return idMaquina;}
     public void setIdMaquina(Integer idMaquina) {this.idMaquina = idMaquina;}

@@ -8,7 +8,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class CapturaJanelas {
-    public static final long TEMPO = (5000);
+    public static final long TEMPO = (30000);
     static Timer timer = null;
     public void capturaJanelas() throws SQLException {
         Looca looca = new Looca();
