@@ -1,4 +1,4 @@
-nov. 18, 2023 7:12:36 PM Log.Log exibirLog
+nov. 18, 2023 7:12:36 PM LogErro.LogErro exibirLog
 INFO:      Operação: Backup
      Entrada: data.txt
      Resultado: Sucesso

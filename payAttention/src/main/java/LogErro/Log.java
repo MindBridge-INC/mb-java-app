@@ -1,4 +1,4 @@
-package Log;
+package LogErro;
 
 
 import java.io.File;

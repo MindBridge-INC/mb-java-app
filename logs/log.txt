@@ -1,0 +1,6 @@
+nov. 20, 2023 8:09:55 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas
+Erro: No value specified for parameter 8
+Estado SQL: 07001
+Código de Erro: 0
+
