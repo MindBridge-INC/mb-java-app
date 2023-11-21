@@ -14,8 +14,8 @@ public class CapturaAcesso {
         LocalDateTime dataHoraAtual = LocalDateTime.now();
         logAcesso.setDtInicializacao(String.valueOf(dataHoraAtual));
         Integer armUsado = 0;
-        Long armTotal = (long) (looca.getGrupoDeDiscos().getVolumes().get(1).getTotal()/ (Math.pow(1024, 3)));
-        Long armDisp = (long) (looca.getGrupoDeDiscos().getVolumes().get(1).getDisponivel() / (Math.pow(1024, 3)));
+        Long armTotal = (long) (looca.getGrupoDeDiscos().getVolumes().get(0).getTotal()/ (Math.pow(1024, 3)));
+        Long armDisp = (long) (looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel() / (Math.pow(1024, 3)));
         armUsado = Math.toIntExact(armTotal - armDisp);
         logAcesso.setArmUsado(Double.valueOf(armUsado));
         System.out.println(logAcesso.getArmUsado());

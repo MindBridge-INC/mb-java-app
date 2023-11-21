@@ -1,5 +1,6 @@
 package Classes;
 public class UsuarioLogin {
+
     public static String email;
     public static String senha;
 
@@ -18,4 +19,8 @@ public class UsuarioLogin {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+
 }
+
+

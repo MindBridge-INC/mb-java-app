@@ -44,6 +44,10 @@ public class LoginDAO extends javax.swing.JFrame{
             captura.capturaDados();
             CapturaJanelas capturaJanelas = new CapturaJanelas();
             capturaJanelas.capturaJanelas();
+
+            LimitesDAO limites = new LimitesDAO();
+            limites.listarLimites();
+
             popUpView popUp = new popUpView();
             popUp.iniciarPopUp();
         }else{

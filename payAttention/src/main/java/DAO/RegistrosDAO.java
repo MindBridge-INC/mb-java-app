@@ -16,7 +16,7 @@ public class RegistrosDAO {
         LocalDateTime dataHoraAtual = LocalDateTime.now();
         Rede rede = looca.getRede();
         String nomeComputador = rede.getParametros().getHostName();
-        String sql = "insert into RegistroMaquina (usoRam, usoProcessador, dtHora, fkMaquinas) VALUES (?,?,?,?)";
+        String sql = "insert into RegistroMaquina (usoRam, usoProcessador, dtRegistro, fkMaquinas) VALUES (?,?,?,?)";
         PreparedStatement ps = null;
         Connection conn = null;
         Statement stmt2 = null;

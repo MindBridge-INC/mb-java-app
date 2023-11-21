@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Models;
+import DAO.AlertaRegMaquinaDAO;
 import DAO.RegistrosDAO;
 import Classes.RegistrosPC;
 import com.github.britooo.looca.api.core.Looca;
@@ -43,6 +44,9 @@ public class Captura extends javax.swing.JFrame{
                             registros.setDiscoUso(usoDisco);
                             System.out.println(registros);
                             RegistrosDAO.inserirRegistros(registros);
+
+                        AlertaRegMaquinaDAO alertaMaq = new AlertaRegMaquinaDAO();
+                        alertaMaq.registrarAlertaMaquina();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
