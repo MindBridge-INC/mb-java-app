@@ -1,4 +1,3 @@
-
 import Views.LoginView;
 import java.sql.SQLException;
 
@@ -7,7 +6,4 @@ public class App extends javax.swing.JFrame {
         LoginView lv = new LoginView();
         lv.setVisible(true);
     }
-
-
-
 }

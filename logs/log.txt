@@ -4,3 +4,21 @@ Erro: No value specified for parameter 8
 Estado SQL: 07001
 Código de Erro: 0
 
+nov. 21, 2023 12:24:12 AM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: Column 'fkMaquina' not found.
+Estado SQL: S0022
+Código de Erro: 0
+
+nov. 21, 2023 12:30:48 AM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: Column 'fkMaquina' not found.
+Estado SQL: S0022
+Código de Erro: 0
+
+nov. 21, 2023 12:32:43 AM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: Column 'fkMaquina' not found.
+Estado SQL: S0022
+Código de Erro: 0
+
