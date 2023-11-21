@@ -1,6 +1,7 @@
 package DAO;
 import ConexaoBanco.Conexao;
 import Classes.Janelas;
+import LogErro.Log;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
 
@@ -39,6 +40,20 @@ public class JanelasDAO {
             }
             }
         catch (SQLException e) {
+            System.out.println("Ocorreu um erro ao acessar o banco: " + e.getMessage());
+            // Capturando informações relevantes para o log
+            String mensagemErro = e.getMessage();
+            String estadoSQL = e.getSQLState();
+            Integer codigoErro = e.getErrorCode();
+
+            // Agora você pode incluir essas informações no log
+            Log log = new Log();
+            log.exibirLog("""
+             Registro das Janelas
+             Erro: %s
+             Estado SQL: %s
+             Código de Erro: %d
+                """.formatted(mensagemErro, estadoSQL, codigoErro));
             throw new RuntimeException(e);
         }
         return false;

@@ -4,6 +4,7 @@ import Classes.RegistrosPC;
 import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
 import Classes.LogAcesso;
+import LogErro.Log;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
 
@@ -43,6 +44,19 @@ public class LogAcessoDAO {
             }
         }catch (SQLException ex){
             System.out.println("Ocorreu um erro ao acessar o banco: " + ex.getMessage());
+            // Capturando informações relevantes para o log
+            String mensagemErro = ex.getMessage();
+            String estadoSQL = ex.getSQLState();
+            Integer codigoErro = ex.getErrorCode();
+
+            // Agora você pode incluir essas informações no log
+            Log log = new Log();
+            log.exibirLog("""
+             Registro dos Acessos
+             Erro: %s
+             Estado SQL: %s
+             Código de Erro: %d
+                """.formatted(mensagemErro, estadoSQL, codigoErro));
         }
         return true;
     }

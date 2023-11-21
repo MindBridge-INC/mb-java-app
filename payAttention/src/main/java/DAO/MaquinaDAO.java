@@ -2,13 +2,14 @@ package DAO;
 import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
 import Classes.CadastroMaquina;
+import LogErro.Log;
 
 import java.sql.*;
 public class MaquinaDAO {
     UsuarioLogin usuarioLogin;
     public boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
         usuarioLogin = new UsuarioLogin();
-        String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         String selectNome = String.format("select hostname from Maquinas WHERE hostname = '%s'", cadastroMaquina.getNomeComputador());
         String selectInstituicao = String.format("select t.fkInstituicao from UsuarioAluno ua join Turma t on ua.fkTurma = t.id join InstituicaoEnsino ie on t.fkInstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());
@@ -40,6 +41,19 @@ public class MaquinaDAO {
         } catch (
                 SQLException ex) {
             System.out.println("Ocorreu um erro ao acessar o banco: " + ex.getMessage());
+            // Capturando informações relevantes para o log
+            String mensagemErro = ex.getMessage();
+            String estadoSQL = ex.getSQLState();
+            Integer codigoErro = ex.getErrorCode();
+
+            // Agora você pode incluir essas informações no log
+            Log log = new Log();
+            log.exibirLog("""
+             Registro das Maquinas
+             Erro: %s
+             Estado SQL: %s
+             Código de Erro: %d
+                """.formatted(mensagemErro, estadoSQL, codigoErro));
         }
         return true;
     }

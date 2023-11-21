@@ -1,6 +1,7 @@
 package DAO;
 import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
+import LogErro.Log;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -58,6 +59,19 @@ public class popUpDAO{
             }
         }catch (SQLException ex){
             System.out.println("Ocorreu um erro ao acessar o banco: " + ex.getMessage());
+            // Capturando informações relevantes para o log
+            String mensagemErro = ex.getMessage();
+            String estadoSQL = ex.getSQLState();
+            Integer codigoErro = ex.getErrorCode();
+
+            // Agora você pode incluir essas informações no log
+            Log log = new Log();
+            log.exibirLog("""
+             Registro dos PopUp
+             Erro: %s
+             Estado SQL: %s
+             Código de Erro: %d
+                """.formatted(mensagemErro, estadoSQL, codigoErro));
         }
         return false;
     }
