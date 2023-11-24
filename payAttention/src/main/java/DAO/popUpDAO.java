@@ -25,7 +25,7 @@ public class popUpDAO{
                 Integer fkAluno = rs.getInt(1);
                 ps = Conexao.getConexao().prepareStatement(insertPontos);
                 ps.setInt(1,10);
-                ps.setString(2, String.valueOf(dataHoraAtual));
+                ps.setObject(2, java.sql.Timestamp.valueOf(dataHoraAtual));
                 ps.setInt(3, fkAluno);
                 ps.execute();
             }
@@ -53,7 +53,7 @@ public class popUpDAO{
                 Integer fkAluno = rs.getInt(1);
                 ps = Conexao.getConexao().prepareStatement(insertPontos);
                 ps.setInt(1,0);
-                ps.setString(2, String.valueOf(dataHoraAtual));
+                ps.setObject(2, java.sql.Timestamp.valueOf(dataHoraAtual));
                 ps.setInt(3, fkAluno);
                 ps.execute();
             }
