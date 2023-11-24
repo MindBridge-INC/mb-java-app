@@ -9,7 +9,7 @@ public class MaquinaDAO {
     UsuarioLogin usuarioLogin;
     public boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
         usuarioLogin = new UsuarioLogin();
-        String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         String selectNome = String.format("select hostname from Maquinas WHERE hostname = '%s'", cadastroMaquina.getNomeComputador());
         String selectInstituicao = String.format("select t.fkInstituicao from UsuarioAluno ua join Turma t on ua.fkTurma = t.id join InstituicaoEnsino ie on t.fkInstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());

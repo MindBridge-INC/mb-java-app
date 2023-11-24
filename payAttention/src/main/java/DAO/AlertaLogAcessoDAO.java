@@ -3,6 +3,7 @@ package DAO;
 import Classes.CadastroMaquina;
 import Classes.LogAcesso;
 import Classes.Limites;
+import Classes.Telegram;
 import ConexaoBanco.Conexao;
 import java.sql.*;
 
@@ -14,6 +15,7 @@ public class AlertaLogAcessoDAO {
         limites = new Limites();
         maquina = new CadastroMaquina();
         logAcessoClass = new LogAcesso();
+
 
         Double discoLimite = limites.getDiscoPorcent();
         Double discoTotal = maquina.getArmazenamentoHD()/Math.pow(1024,3);
@@ -44,6 +46,8 @@ public class AlertaLogAcessoDAO {
                     ps.setString(2,"Atenção");
                     ps.setDouble(3, idRegistro);
                     ps.execute();
+                    Telegram telegram = new Telegram();
+                    telegram.enviarAlerta(String.format("\uD83D\uDD21 "+"Atenção! Armazenamento próximo ao nivel critico para a máquina %s",logAcessoClass.getFkMaquina()));
                 } else if (porcentUsado > discoLimite) {
                     // System.out.println("test CRITICO");
                     ps = Conexao.getConexao().prepareStatement(insertAlertaLog);
@@ -51,6 +55,9 @@ public class AlertaLogAcessoDAO {
                     ps.setString(2,"Crítico");
                     ps.setDouble(3, idRegistro);
                     ps.execute();
+                    Telegram telegram = new Telegram();
+                    telegram.enviarAlerta(String.format("\uD83D\uDEA8 "+"Atenção! Armazenamento à nivel **CRÍTICO** para a máquina %s",logAcessoClass.getFkMaquina()));
+
                 }
             }
         } catch (SQLException ex) {

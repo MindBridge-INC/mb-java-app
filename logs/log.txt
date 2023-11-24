@@ -22,3 +22,81 @@ Erro: Column 'fkMaquina' not found.
 Estado SQL: S0022
 Código de Erro: 0
 
+nov. 23, 2023 1:03:14 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas
+Erro: No value specified for parameter 8
+Estado SQL: 07001
+Código de Erro: 0
+
+nov. 23, 2023 2:35:11 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas
+Erro: No value specified for parameter 8
+Estado SQL: 07001
+Código de Erro: 0
+
+nov. 23, 2023 2:47:59 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas
+Erro: No value specified for parameter 8
+Estado SQL: 07001
+Código de Erro: 0
+
+nov. 23, 2023 11:22:02 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas
+Erro: No value specified for parameter 8
+Estado SQL: 07001
+Código de Erro: 0
+
+nov. 23, 2023 11:57:11 PM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 23, 2023 11:57:41 PM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:01:34 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:27:48 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:28:18 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:38:02 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:40:41 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:57:09 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 24, 2023 12:57:39 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+

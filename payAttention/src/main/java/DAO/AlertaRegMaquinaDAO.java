@@ -2,7 +2,11 @@ package DAO;
 
 import Classes.CadastroMaquina;
 import Classes.Limites;
+import Classes.LogAcesso;
+import Classes.Telegram;
 import ConexaoBanco.Conexao;
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.rede.Rede;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,6 +19,11 @@ public class AlertaRegMaquinaDAO {
 
         limites = new Limites();
         maquina = new CadastroMaquina();
+
+        LogAcesso logAcessoClass = new LogAcesso();
+        Looca looca = new Looca();
+        Rede rede = looca.getRede();
+        String nomeComputador = rede.getParametros().getHostName();
 
         Double ramMaquina = Double.valueOf(maquina.getQuantidadeRAM())/Math.pow(1024,3);
         Double ramLimite = limites.getRamPorcent();
@@ -51,7 +60,7 @@ public class AlertaRegMaquinaDAO {
                     idReg.add(rsRegistro.getInt("id"));
                 }
             }
-
+            System.out.println(ramAtual.toString());
             if (ramAtual.get(2) >= (ramLimite - (ramLimite*0.1)) && ramAtual.get(1) >= (ramLimite - (ramLimite*0.1))) {
                 if (ramAtual.get(0) >= (ramLimite - (ramLimite * 0.1))) {
                     if (ramAtual.get(0) >= (ramLimite - (ramLimite * 0.1)) && ramAtual.get(0) < ramLimite) {
@@ -62,6 +71,14 @@ public class AlertaRegMaquinaDAO {
                             ps.setString(2, "Atenção");
                             ps.setInt(3, idReg.get(0));
                             ps.execute();
+                            Telegram telegram = new Telegram();
+                            telegram.enviarAlerta(String.format("""
+                                    \u26A0\uFE0F Atenção!
+                                    Alerta: Atenção
+                                    Componente: RAM
+                                    Máquina %s
+                                    """,nomeComputador));
+
                         } catch (SQLException ex) {
                             System.out.println(ex);
                         }
@@ -74,6 +91,13 @@ public class AlertaRegMaquinaDAO {
                             ps.setInt(3, idReg.get(0));
                             ps.execute();
 
+                            Telegram telegram = new Telegram();
+                            telegram.enviarAlerta(String.format("""
+                                    \uD83D\uDEA8 Atenção!
+                                    Alerta:CRÍTICO
+                                    Componente: RAM
+                                    Máquina %s
+                                    """,nomeComputador));
                         } catch (SQLException ex) {
                             System.out.println(ex);
                         }
@@ -91,6 +115,13 @@ public class AlertaRegMaquinaDAO {
                             ps.setString(2,"Atenção");
                             ps.setInt(3,idReg.get(0));
                             ps.execute();
+                            Telegram telegram = new Telegram();
+                            telegram.enviarAlerta(String.format("""
+                                    \u26A0\uFE0F Atenção!
+                                    Alerta: Atenção
+                                    Componente: CPU
+                                    Máquina %s
+                                    """,nomeComputador));
                         } catch ( SQLException ex ) {
                             System.out.println(ex);
                         }
@@ -102,6 +133,13 @@ public class AlertaRegMaquinaDAO {
                             ps.setString(2,"Crítico");
                             ps.setInt(3,idReg.get(0));
                             ps.execute();
+                            Telegram telegram = new Telegram();
+                            telegram.enviarAlerta(String.format("""
+                                    \uD83D\uDEA8 Atenção!
+                                    Alerta:CRÍTICO
+                                    Componente: CPU
+                                    Máquina %s
+                                    """,nomeComputador));
                         } catch (SQLException ex) {
                             System.out.println(ex);
                         }
