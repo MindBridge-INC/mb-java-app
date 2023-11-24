@@ -33,7 +33,7 @@ public class RegistrosDAO {
                 ps = Conexao.getConexao().prepareStatement(sql);
                 ps.setDouble(1, registros.getMemoriaUso() / (Math.pow(1024, 3)));
                 ps.setDouble(2, registros.getUsoProcessador());
-                ps.setString(3, String.valueOf(dataHoraAtual));
+                ps.setObject(3, dataHoraAtual);
                 ps.setInt(4, idMaquinas);
                 ps.execute();
             }

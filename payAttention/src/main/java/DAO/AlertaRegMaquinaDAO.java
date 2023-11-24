@@ -41,7 +41,7 @@ public class AlertaRegMaquinaDAO {
             ResultSet rsMaquina = stmtIdMaquina.executeQuery(selectIdMaquina);
             if (rsMaquina.next()) {
                 Integer idMaquina = rsMaquina.getInt("id");
-                String selectReg = "SELECT * FROM RegistroMaquina WHERE fkMaquinas = %d ORDER BY dtRegistro DESC LIMIT 3;".formatted(idMaquina);
+                String selectReg = "SELECT TOP 3 * FROM RegistroMaquina WHERE fkMaquinas = %d ORDER BY dtRegistro DESC;".formatted(idMaquina);
                 ResultSet rsRegistro = stmtRegistro.executeQuery(selectReg);
 
                 while (rsRegistro.next()) {

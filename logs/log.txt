@@ -22,3 +22,21 @@ Erro: Column 'fkMaquina' not found.
 Estado SQL: S0022
 Código de Erro: 0
 
+nov. 23, 2023 11:37:05 PM LogErro.Log exibirLog
+INFORMAÇÕES: Registro dos Acessos
+Erro: Conversion failed when converting date and/or time from character string.
+Estado SQL: S0001
+Código de Erro: 241
+
+nov. 23, 2023 11:37:16 PM LogErro.Log exibirLog
+INFORMAÇÕES: Registro dos Registros
+Erro: Conversion failed when converting date and/or time from character string.
+Estado SQL: S0001
+Código de Erro: 241
+
+nov. 23, 2023 11:42:11 PM LogErro.Log exibirLog
+INFORMAÇÕES: Registro dos Registros
+Erro: Conversion failed when converting date and/or time from character string.
+Estado SQL: S0001
+Código de Erro: 241
+

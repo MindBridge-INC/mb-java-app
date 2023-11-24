@@ -26,7 +26,7 @@ public class AlertaLogAcessoDAO {
         conn = Conexao.getConexao();
         stmtLog = conn.createStatement();
 
-        String selectLog = "SELECT * FROM LogAcesso WHERE fkUsuario = %d AND fkMaquina = %d ORDER BY dtRegistro DESC LIMIT 1".formatted(logAcessoClass.getFkUsuario(), logAcessoClass.getFkMaquina());
+        String selectLog = "SELECT TOP 1 * FROM LogAcesso WHERE fkUsuario = %d AND fkMaquina = %d ORDER BY dtInicializacao DESC;".formatted(logAcessoClass.getFkUsuario(), logAcessoClass.getFkMaquina());
 
         String insertAlertaLog = "INSERT INTO AlertasLog(componente,tipo,fkLogAcesso) VALUES (?,?,?)";
 
