@@ -1,26 +1,25 @@
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\CadastroMaquina.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\Janelas.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\LogErro\Log.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\LogAcesso.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\RegistrosDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\ConexaoBanco\Conexao.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\Limites.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\AlertaRegMaquina.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\UsuarioLogin.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\LoginDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Controllers\LoginController.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\RegistrosPC.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\JanelasDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\LogAcessoDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\MaquinaDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Models\CapturaAcesso.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\LimitesDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Models\CapturaJanelas.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Views\popUpView.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\App.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\AlertaRegMaquinaDAO.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Classes\Login.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Views\LoginView.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Models\Captura.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\Models\CapturaMaquina.java
-C:\Users\teo_g\OneDrive\Área de Trabalho\payAttentionSQLServer\mb-java-app\payAttention\src\main\java\DAO\popUpDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Models\CapturaJanelas.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\RegistrosPC.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Log\Teste.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Models\CapturaMaquina.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\Janelas.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Views\LoginView.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Controllers\LoginController.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\ConexaoBanco\Conexao.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\MaquinaDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\LogAcesso.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\RegistrosDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\LogAcessoDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\popUpDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Log\Log.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Views\popUpView.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\Alertas.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\LoginDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Models\CapturaAcesso.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\UsuarioLogin.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Models\Captura.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\Login.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\JanelasDAO.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\App.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\Classes\CadastroMaquina.java
+C:\Users\Matheus\Desktop\mb-java-app\payAttention\src\main\java\DAO\AlertasDAO.java
