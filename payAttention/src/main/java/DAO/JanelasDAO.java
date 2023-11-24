@@ -28,7 +28,7 @@ public class JanelasDAO {
             while(rs.next()) {
                 Integer fkMaquina = rs.getInt(1);
                 ps = Conexao.getConexao().prepareStatement(sql);
-                ps.setString(1, String.valueOf(dataHoraAtual));
+                ps.setObject(1, dataHoraAtual);
                 ps.setInt(2, janelas.getPID());
                 ps.setInt(3, janelas.getIdJanela());
                 ps.setString(4, janelas.getTitulo());
