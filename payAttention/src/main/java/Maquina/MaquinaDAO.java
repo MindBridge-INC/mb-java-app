@@ -1,17 +1,12 @@
-package DAO;
-import Classes.UsuarioLogin;
-import ConexaoBanco.Conexao;
-import Classes.CadastroMaquina;
-
+package Maquina;
+import Conexao.Conexao;
 import java.sql.*;
 public class MaquinaDAO {
-    UsuarioLogin usuarioLogin;
-    public boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
-        usuarioLogin = new UsuarioLogin();
+    public static boolean cadastrarMaquina(CadastroMaquina cadastroMaquina) throws SQLException {
         String sql = "INSERT INTO Maquinas (hostname, SistemaOperacional, Processador, RAM, armazenamento, statSist, fkInstituicao) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ps = null;
         String selectNome = String.format("select hostname from Maquinas WHERE hostname = '%s'", cadastroMaquina.getNomeComputador());
-        String selectInstituicao = String.format("select t.fkInstituicao from UsuarioAluno ua join Turma t on ua.fkTurma = t.id join InstituicaoEnsino ie on t.fkInstituicao = ie.id where ua.email = '%s'", usuarioLogin.getEmail());
+        String selectInstituicao = String.format("select id from InstituicaoEnsino WHERE nome = 'Siglan'");
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;
@@ -41,6 +36,6 @@ public class MaquinaDAO {
                 SQLException ex) {
             System.out.println("Ocorreu um erro ao acessar o banco: " + ex.getMessage());
         }
-        return true;
+        return false;
     }
 }

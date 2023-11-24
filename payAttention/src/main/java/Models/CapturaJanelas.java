@@ -8,7 +8,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class CapturaJanelas {
-    public static final long TEMPO = (30000);
+    public static final long TEMPO = (1000);
     static Timer timer = null;
     public void capturaJanelas() throws SQLException {
         Looca looca = new Looca();
@@ -21,11 +21,11 @@ public class CapturaJanelas {
                 @Override
                 public void run() {
                     try {
-                        Integer PID = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(5).getPid());
-                        Integer idJanela = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(5).getJanelaId());
-                        String tituloJanela = looca.getGrupoDeJanelas().getJanelasVisiveis().get(5).getTitulo();
-                        String comandoJanela = looca.getGrupoDeJanelas().getJanelasVisiveis().get(5).getComando();
-                        String localizacaoJanela = String.valueOf(looca.getGrupoDeJanelas().getJanelasVisiveis().get(5).getLocalizacaoETamanho());
+                        Integer PID = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(4).getPid());
+                        Integer idJanela = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(3).getJanelaId());
+                        String tituloJanela = looca.getGrupoDeJanelas().getJanelasVisiveis().get(4).getTitulo();
+                        String comandoJanela = looca.getGrupoDeJanelas().getJanelasVisiveis().get(3).getComando();
+                        String localizacaoJanela = String.valueOf(looca.getGrupoDeJanelas().getJanelasVisiveis().get(3).getLocalizacaoETamanho());
                         janelas.setPID(PID);
                         janelas.setIdJanela(idJanela);
                         janelas.setTitulo(tituloJanela);

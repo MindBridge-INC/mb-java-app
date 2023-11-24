@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
-import Classes.AlertaLogAcesso;
-import Classes.AlertaRegMaquina;
 import Classes.Login;
 import Classes.UsuarioLogin;
 import ConexaoBanco.Conexao;
@@ -46,12 +44,9 @@ public class LoginDAO extends javax.swing.JFrame{
             captura.capturaDados();
             CapturaJanelas capturaJanelas = new CapturaJanelas();
             capturaJanelas.capturaJanelas();
+
             LimitesDAO limites = new LimitesDAO();
             limites.listarLimites();
-
-            AlertaLogAcessoDAO alertaLogAcesso = new AlertaLogAcessoDAO();
-            alertaLogAcesso.registrarAlertaMaquina();
-
 
             popUpView popUp = new popUpView();
             popUp.iniciarPopUp();
