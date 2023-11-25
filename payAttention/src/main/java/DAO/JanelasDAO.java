@@ -21,13 +21,13 @@ public class JanelasDAO {
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt2 = conn.createStatement();
         try{
             ResultSet rs = stmt2.executeQuery(selectIdMaquina);
             while(rs.next()) {
                 Integer fkMaquina = rs.getInt(1);
-                ps = Conexao.getConexao().prepareStatement(sql);
+                ps = Conexao.getConexaoMSSQL().prepareStatement(sql);
                 ps.setObject(1, dataHoraAtual);
                 ps.setInt(2, janelas.getPID());
                 ps.setInt(3, janelas.getIdJanela());

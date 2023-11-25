@@ -16,14 +16,14 @@ public class popUpDAO{
         System.out.println(usuarioLogin.getEmail());
         String selectIdAluno = String.format("select id from UsuarioAluno where email = '%s'",usuarioLogin.getEmail());
         String insertPontos = "insert into Pontuacao (pontos, dtRegistro, fkAluno) VALUES(?,?,?)";
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
         try {
             ResultSet rs = stmt.executeQuery(selectIdAluno);
             if (rs.next()){
                 System.out.println("Inserindo pontuação.");
                 Integer fkAluno = rs.getInt(1);
-                ps = Conexao.getConexao().prepareStatement(insertPontos);
+                ps = Conexao.getConexaoMSSQL().prepareStatement(insertPontos);
                 ps.setInt(1,10);
                 ps.setObject(2, dataHoraAtual);
                 ps.setInt(3, fkAluno);
@@ -43,7 +43,7 @@ public class popUpDAO{
         String selectIdAluno = String.format("select id from UsuarioAluno where email = '%s'", usuarioLogin.getEmail());
         String insertPontos = "insert into Pontuacao (pontos, dtRegistro, fkAluno) VALUES(?,?,?)";
 
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
 
         try {
@@ -51,7 +51,7 @@ public class popUpDAO{
             if (rs.next()){
                 System.out.println("Inserindo pontuação.");
                 Integer fkAluno = rs.getInt(1);
-                ps = Conexao.getConexao().prepareStatement(insertPontos);
+                ps = Conexao.getConexaoMSSQL().prepareStatement(insertPontos);
                 ps.setInt(1,0);
                 ps.setObject(2, dataHoraAtual);
                 ps.setInt(3, fkAluno);

@@ -25,7 +25,7 @@ public class AlertaLogAcessoDAO {
         PreparedStatement ps = null;
         Statement stmtLog = null;
 
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmtLog = conn.createStatement();
 
         String selectLog = "SELECT TOP 1 * FROM LogAcesso WHERE fkUsuario = %d AND fkMaquina = %d ORDER BY dtInicializacao DESC;".formatted(logAcessoClass.getFkUsuario(), logAcessoClass.getFkMaquina());
@@ -41,7 +41,7 @@ public class AlertaLogAcessoDAO {
 
                 if (porcentUsado >= (discoLimite - (discoLimite*0.1)) && porcentUsado <= discoLimite) {
                     // System.out.println("test ATENÇÃO");
-                    ps = Conexao.getConexao().prepareStatement(insertAlertaLog);
+                    ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlertaLog);
                     ps.setString(1,"Armazenamento");
                     ps.setString(2,"Atenção");
                     ps.setDouble(3, idRegistro);
@@ -50,7 +50,7 @@ public class AlertaLogAcessoDAO {
                     telegram.enviarAlerta(String.format("\uD83D\uDD21 "+"Atenção! Armazenamento próximo ao nivel critico para a máquina %s",logAcessoClass.getFkMaquina()));
                 } else if (porcentUsado > discoLimite) {
                     // System.out.println("test CRITICO");
-                    ps = Conexao.getConexao().prepareStatement(insertAlertaLog);
+                    ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlertaLog);
                     ps.setString(1,"Armazenamento");
                     ps.setString(2,"Crítico");
                     ps.setDouble(3, idRegistro);

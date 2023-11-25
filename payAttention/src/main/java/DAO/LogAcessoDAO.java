@@ -29,7 +29,7 @@ public class LogAcessoDAO {
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
         stmt2 = conn.createStatement();
         try{
@@ -41,7 +41,7 @@ public class LogAcessoDAO {
                 while (rs.next()) {
                     Integer idMaquinas = rs.getInt(1);
                     logAcessoClass.setFkMaquina(idMaquinas);
-                    ps = Conexao.getConexao().prepareStatement(insertAcesso);
+                    ps = Conexao.getConexaoMSSQL().prepareStatement(insertAcesso);
                     ps.setObject(1, dataHoraAtual);
                     ps.setDouble(2, logAcesso.getArmUsado());
                     ps.setInt(3, fkAluno);

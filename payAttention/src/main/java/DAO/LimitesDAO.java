@@ -20,7 +20,7 @@ public class LimitesDAO {
         Statement stmtLimite = null;
         Statement stmtInst = null;
 
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmtLimite = conn.createStatement();
         stmtInst = conn.createStatement();
 

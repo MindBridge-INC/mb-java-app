@@ -21,7 +21,7 @@ public class RegistrosDAO {
         PreparedStatement ps = null;
         Connection conn = null;
         Statement stmt2 = null;
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         String selectIdMaquina = String.format("select id from Maquinas WHERE hostname = '%s'", nomeComputador);
         stmt2 = conn.createStatement();
         try {
@@ -30,7 +30,7 @@ public class RegistrosDAO {
                 Integer idMaquinas = rs1.getInt(1);
                 registros.setFkMaquinas(idMaquinas);
                 cadastroMaquina.setIdMaquina(idMaquinas);
-                ps = Conexao.getConexao().prepareStatement(sql);
+                ps = Conexao.getConexaoMSSQL().prepareStatement(sql);
                 ps.setDouble(1, registros.getMemoriaUso() / (Math.pow(1024, 3)));
                 ps.setDouble(2, registros.getUsoProcessador());
                 ps.setObject(3, dataHoraAtual);

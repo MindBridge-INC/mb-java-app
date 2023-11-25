@@ -16,7 +16,7 @@ public class MaquinaDAO {
         Connection conn = null;
         Statement stmt = null;
         Statement stmt2 = null;
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
         stmt2 = conn.createStatement();
         try {
@@ -27,7 +27,7 @@ public class MaquinaDAO {
             } else{
                 while (rs3.next()) {
                     Integer fkInstituicao = rs3.getInt(1);
-                    ps = Conexao.getConexao().prepareStatement(sql);
+                    ps = Conexao.getConexaoMSSQL().prepareStatement(sql);
                     ps.setString(1, cadastroMaquina.getNomeComputador());
                     ps.setString(2, cadastroMaquina.getSistemaOperacional());
                     ps.setString(3, cadastroMaquina.getNomeProcessador());

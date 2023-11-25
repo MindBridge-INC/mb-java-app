@@ -38,7 +38,7 @@ public class AlertaRegMaquinaDAO {
         Statement stmtRegistro = null;
         Statement stmtIdMaquina = null;
 
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmtRegistro = conn.createStatement();
         stmtIdMaquina = conn.createStatement();
 
@@ -66,7 +66,7 @@ public class AlertaRegMaquinaDAO {
                     if (ramAtual.get(0) >= (ramLimite - (ramLimite * 0.1)) && ramAtual.get(0) < ramLimite) {
                         /*inserir com atenção*/
                         try {
-                            ps = Conexao.getConexao().prepareStatement(insertAlerta);
+                            ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlerta);
                             ps.setString(1, "RAM");
                             ps.setString(2, "Atenção");
                             ps.setInt(3, idReg.get(0));
@@ -85,7 +85,7 @@ public class AlertaRegMaquinaDAO {
                     } else {
                         /*inserir com critico*/
                         try {
-                            ps = Conexao.getConexao().prepareStatement(insertAlerta);
+                            ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlerta);
                             ps.setString(1, "RAM");
                             ps.setString(2, "Crítico");
                             ps.setInt(3, idReg.get(0));
@@ -110,7 +110,7 @@ public class AlertaRegMaquinaDAO {
                     if (cpuAtual.get(0) >= (cpuLimite - (cpuLimite*0.1)) && cpuAtual.get(0) < cpuLimite) {
                         /*inserir com atenção*/
                         try{
-                            ps = Conexao.getConexao().prepareStatement(insertAlerta);
+                            ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlerta);
                             ps.setString(1,"CPU");
                             ps.setString(2,"Atenção");
                             ps.setInt(3,idReg.get(0));
@@ -128,7 +128,7 @@ public class AlertaRegMaquinaDAO {
                     } else {
                         /*inserir com critico*/
                         try {
-                            ps = Conexao.getConexao().prepareStatement(insertAlerta);
+                            ps = Conexao.getConexaoMSSQL().prepareStatement(insertAlerta);
                             ps.setString(1,"CPU");
                             ps.setString(2,"Crítico");
                             ps.setInt(3,idReg.get(0));

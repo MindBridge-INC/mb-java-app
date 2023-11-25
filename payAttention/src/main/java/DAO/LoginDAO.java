@@ -26,7 +26,7 @@ public class LoginDAO extends javax.swing.JFrame{
         System.out.println("sql");
         Connection conn = null;
         Statement stmt = null;
-        conn = Conexao.getConexao();
+        conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         if (rs.next()) {
