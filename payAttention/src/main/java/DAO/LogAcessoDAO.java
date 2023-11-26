@@ -9,6 +9,7 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.rede.Rede;
 
 import java.sql.*;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class LogAcessoDAO {
@@ -21,10 +22,11 @@ public class LogAcessoDAO {
 
         Looca looca = new Looca();
         Rede rede = looca.getRede();
+        Instant dtInicializacao = looca.getSistema().getInicializado();
         String nomeComputador = rede.getParametros().getHostName();
         String selectIdMaquina = String.format("select id from Maquinas WHERE hostname = '%s'", nomeComputador);
         String selectIdUsuario = String.format("select id from UsuarioAluno WHERE email = '%s'", usuarioLogin.getEmail());
-        String insertAcesso = "insert into LogAcesso (dtInicializacao, armUsado, fkUsuario, fkMaquina) values (?,?,?,?)";
+        String insertAcesso = "insert into LogAcesso (dtRegistro, dtInicializacao, armUsado, fkUsuario, fkMaquina) values (?,?,?,?,?)";
         PreparedStatement ps = null;
         Connection conn = null;
         Statement stmt = null;
@@ -43,9 +45,10 @@ public class LogAcessoDAO {
                     logAcessoClass.setFkMaquina(idMaquinas);
                     ps = Conexao.getConexaoMSSQL().prepareStatement(insertAcesso);
                     ps.setObject(1, dataHoraAtual);
-                    ps.setDouble(2, logAcesso.getArmUsado());
-                    ps.setInt(3, fkAluno);
-                    ps.setInt(4, idMaquinas);
+                    ps.setString(2, String.valueOf(dtInicializacao));
+                    ps.setDouble(3, logAcesso.getArmUsado());
+                    ps.setInt(4, fkAluno);
+                    ps.setInt(5, idMaquinas);
                     ps.execute();
                 }
             }

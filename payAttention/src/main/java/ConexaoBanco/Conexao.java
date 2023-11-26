@@ -5,13 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private static final String urlSQLServer = "jdbc:sqlserver://ec2-52-55-115-65.compute-1.amazonaws.com:1433;database=Mindbridge;encrypt=true;trustServerCertificate=true;";
+    private static final String urlSQLServer = "jdbc:sqlserver://ec2-52-6-22-247.compute-1.amazonaws.com:1433;database=Mindbridge;encrypt=true;trustServerCertificate=true;";
     private static final String userSQLServer = "sa";
-    private static final String passwordSQLServer = "a";
-    private static final String urlDocker = "jdbc:mysql://ec2-54-152-129-192.compute-1.amazonaws.com:3306;database=Mindbridge;encrypt=true;trustServerCertificate=true;";
-    private static final String userDocker = "root";
+    private static final String passwordSQLServer = "gemini78";
+    private static final String urlDocker = "jdbc:mysql://localhost:3306/Mindbridge_maquina";
+    private static final String userDocker = "admin";
     private static final String passwordDocker = "admin";
     private static Connection conn;
+    private static Connection connDocker;
 
     public static Connection getConexaoMSSQL(){
         try {
@@ -32,11 +33,11 @@ public class Conexao {
     public static Connection getConexaoDocker(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            if(conn == null){
-                conn = DriverManager.getConnection(urlDocker, userDocker, passwordDocker);
-                return conn;
+            if(connDocker == null){
+                connDocker = DriverManager.getConnection(urlDocker, userDocker, passwordDocker);
+                return connDocker;
             }else {
-                return conn;
+                return connDocker;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

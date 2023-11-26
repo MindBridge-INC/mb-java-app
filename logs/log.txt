@@ -118,3 +118,117 @@ Erro: Data truncation: Data too long for column 'titulo' at row 1
 Estado SQL: 22001
 Código de Erro: 1406
 
+nov. 25, 2023 1:45:42 PM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: Cannot insert the value NULL into column 'dtRegistro', table 'Mindbridge.dbo.LogAcesso'; column does not allow nulls. INSERT fails.
+Estado SQL: 23000
+Código de Erro: 515
+
+nov. 25, 2023 1:55:28 PM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: O valor não está definido para o número de parâmetro 5.
+Estado SQL: null
+Código de Erro: 0
+
+nov. 25, 2023 1:57:14 PM LogErro.Log exibirLog
+INFO: Registro dos Acessos
+Erro: A conversão de UNKNOWN em UNKNOWN não tem suporte.
+Estado SQL: null
+Código de Erro: 0
+
+nov. 25, 2023 7:04:04 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas Docker
+Erro: Cannot insert the value NULL into column 'fkInstituicao', table 'Mindbridge.dbo.Maquinas'; column does not allow nulls. INSERT fails.
+Estado SQL: 23000
+Código de Erro: 515
+
+nov. 25, 2023 7:15:38 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas Docker
+Erro: Cannot insert the value NULL into column 'fkInstituicao', table 'Mindbridge.dbo.Maquinas'; column does not allow nulls. INSERT fails.
+Estado SQL: 23000
+Código de Erro: 515
+
+nov. 25, 2023 7:19:35 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas Docker
+Erro: Field 'fkInstituicao' doesn't have a default value
+Estado SQL: HY000
+Código de Erro: 1364
+
+nov. 25, 2023 7:19:59 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas Docker
+Erro: Field 'fkInstituicao' doesn't have a default value
+Estado SQL: HY000
+Código de Erro: 1364
+
+nov. 25, 2023 7:24:11 PM LogErro.Log exibirLog
+INFO: Registro das Maquinas Docker
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:03 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:06 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:08 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:11 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:16 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:21 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:26 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:44:31 PM LogErro.Log exibirLog
+INFO: Registro dos Registros
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
+nov. 25, 2023 7:45:29 PM LogErro.Log exibirLog
+INFO: Registro dos Registros Docker
+Erro: Unknown column 'fkMaquinas' in 'field list'
+Estado SQL: 42S22
+Código de Erro: 1054
+
+nov. 25, 2023 7:45:32 PM LogErro.Log exibirLog
+INFO: Registro dos Registros Docker
+Erro: Unknown column 'fkMaquinas' in 'field list'
+Estado SQL: 42S22
+Código de Erro: 1054
+
+nov. 26, 2023 12:12:11 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
+Estado SQL: 42S02
+Código de Erro: 1146
+
