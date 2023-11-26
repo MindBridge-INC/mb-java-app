@@ -232,3 +232,27 @@ Erro: Table 'mindbridge_maquina.maquinas' doesn't exist
 Estado SQL: 42S02
 Código de Erro: 1146
 
+nov. 26, 2023 12:25:19 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: String or binary data would be truncated in table 'Mindbridge.dbo.JanelasAbertas', column 'comando'. Truncated value: 'C:\Program Files\WindowsApps\RealtekSemiconductorCorp.RealtekAudioControl_1.35.268.0_x64__dt26b99r8h'.
+Estado SQL: S0001
+Código de Erro: 2628
+
+nov. 26, 2023 2:10:24 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: String or binary data would be truncated in table 'Mindbridge.dbo.JanelasAbertas', column 'titulo'. Truncated value: 'C:\Program Files\WindowsApps\RealtekSemiconductorCorp.RealtekAudioControl_1.35.268.0_x64__dt26b99r8h'.
+Estado SQL: S0001
+Código de Erro: 2628
+
+nov. 26, 2023 2:13:09 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
+nov. 26, 2023 2:15:18 AM LogErro.Log exibirLog
+INFO: Registro das Janelas
+Erro: Data truncation: Data too long for column 'titulo' at row 1
+Estado SQL: 22001
+Código de Erro: 1406
+
