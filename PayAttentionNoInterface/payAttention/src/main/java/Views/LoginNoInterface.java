@@ -11,9 +11,7 @@ import java.util.TimerTask;
 
 public class LoginNoInterface {
     public static final long TEMPO_OPEN = (5000);
-    public static final long TEMPO_CLOSE = (10000);
     static Timer timerOpen = null;
-    static Timer timerClose = null;
     Login login = new Login();
 
     public void validaLogin() throws SQLException {
@@ -52,7 +50,6 @@ public class LoginNoInterface {
     }
 
     public void popUpNoFrame()throws SQLException{
-        Scanner scanner = new Scanner(System.in);
         popUpDAO popUp = new popUpDAO();
         if (timerOpen == null) {
             timerOpen = new Timer();
@@ -60,9 +57,8 @@ public class LoginNoInterface {
                 @Override
                 public void run() {
                     System.out.println("Ainda está acompanhando essa aula ? (Sim)");
-                    String resposta = scanner.nextLine();
-                    scanner.close();
-                    if (resposta == "Sim" || resposta == "sim" || resposta == "s"){
+                    String resposta = "Sim";
+                    if (resposta == "Sim"){
                         try {
                             popUp.popUpTrue();
                         } catch (SQLException e) {
@@ -72,21 +68,6 @@ public class LoginNoInterface {
                 }
             };
             timerOpen.scheduleAtFixedRate(tarefa, TEMPO_OPEN, TEMPO_OPEN);
-        }
-        if (timerClose == null) {
-            timerClose = new Timer();
-            TimerTask tarefa2 = new TimerTask() {
-                @Override
-                public void run() {
-                    scanner.close();
-                    try {
-                        popUp.popUpFalse();
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            };
-            timerClose.scheduleAtFixedRate(tarefa2, TEMPO_CLOSE, TEMPO_CLOSE);
         }
     }
 }

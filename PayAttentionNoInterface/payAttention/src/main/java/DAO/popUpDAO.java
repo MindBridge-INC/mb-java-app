@@ -15,7 +15,7 @@ public class popUpDAO{
         Connection conn = null;
         Statement stmt = null;
         System.out.println(login.getEmail());
-        String selectIdAluno = String.format("select id from UsuarioAluno where email = '%s'",login.getEmail());
+        String selectIdAluno = String.format("select id from UsuarioAluno where email = 'joaosilva@gmail.com'");
         String insertPontos = "insert into Pontuacao (pontos, dtRegistro, fkAluno) VALUES(?,?,?)";
         conn = Conexao.getConexaoMSSQL();
         stmt = conn.createStatement();
@@ -41,7 +41,7 @@ public class popUpDAO{
         Connection conn = null;
         Statement stmt = null;
         System.out.println(login.getEmail());
-        String selectIdAluno = String.format("select id from UsuarioAluno where email = '%s'", login.getEmail());
+        String selectIdAluno = String.format("select id from UsuarioAluno where email = 'joaosilva@gmail.com'");
         String insertPontos = "insert into Pontuacao (pontos, dtRegistro, fkAluno) VALUES(?,?,?)";
 
         conn = Conexao.getConexaoMSSQL();

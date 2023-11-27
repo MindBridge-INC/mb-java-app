@@ -64,14 +64,8 @@ Erro: Invalid object name 'Maquina'.
 Estado SQL: S0002
 Código de Erro: 208
 
-nov. 26, 2023 5:25:14 PM LogErro.Log exibirLog
-INFO: Registro das Maquinas Docker
-Erro: Invalid object name 'Maquina'.
-Estado SQL: S0002
-Código de Erro: 208
-
-nov. 26, 2023 5:32:17 PM LogErro.Log exibirLog
-INFO: Registro das Maquinas Docker
+nov. 26, 2023 5:38:16 PM LogErro.Log exibirLog
+INFORMAÇÕES: Registro das Maquinas Docker
 Erro: Invalid object name 'Maquina'.
 Estado SQL: S0002
 Código de Erro: 208
