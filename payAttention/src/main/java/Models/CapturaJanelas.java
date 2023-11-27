@@ -24,7 +24,7 @@ public class CapturaJanelas {
                 public void run() {
                     try {
                         for (int i = 0; i < looca.getGrupoDeJanelas().getJanelasVisiveis().size(); i++) {
-                            System.out.println("PROCESSOS EM EXECUCAO DA MAQUINA: " + looca.getGrupoDeJanelas().getJanelasVisiveis().size());
+                            //System.out.println("PROCESSOS EM EXECUCAO DA MAQUINA: " + looca.getGrupoDeJanelas().getJanelasVisiveis().size());
                             Integer PID = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(i).getPid());
                             Integer idJanela = Math.toIntExact(looca.getGrupoDeJanelas().getJanelasVisiveis().get(i).getJanelaId());
                             String tituloJanela = looca.getGrupoDeJanelas().getJanelasVisiveis().get(i).getTitulo();
